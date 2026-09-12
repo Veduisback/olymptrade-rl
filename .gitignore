@@ -1,0 +1,27 @@
+@"
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+env/
+
+models/*.pt
+models/*.pth
+*.pt
+*.pth
+
+*.csv
+*.log
+
+.env
+.env.*
+
+.vscode/
+.idea/
+
+playwright-report/
+test-results/
+
+screenshots/
+"@ | Set-Content .gitignore
