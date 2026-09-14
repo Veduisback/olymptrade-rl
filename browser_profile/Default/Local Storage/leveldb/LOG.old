@@ -1,3 +1,5 @@
-2026/09/12-21:23:14.980 3c24 Reusing MANIFEST C:\Users\rachn\Projects\olymptrade-rl\browser_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/09/12-21:23:15.005 3c24 Recovering log #123
-2026/09/12-21:23:15.016 3c24 Reusing old log C:\Users\rachn\Projects\olymptrade-rl\browser_profile\Default\Local Storage\leveldb/000123.log 
+2026/09/12-21:24:37.648 192c Reusing MANIFEST C:\Users\rachn\Projects\olymptrade-rl\browser_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/09/12-21:24:37.660 192c Recovering log #123
+2026/09/12-21:24:37.661 192c Level-0 table #127: started
+2026/09/12-21:24:37.770 192c Level-0 table #127: 21776 bytes OK
+2026/09/12-21:24:37.854 192c Delete type=0 #123

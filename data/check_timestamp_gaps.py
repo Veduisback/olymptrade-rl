@@ -7,6 +7,7 @@ GAP_THRESHOLD = 2.0
 
 def check_file(path: Path):
     gaps = []
+    quote_count = 0
 
     with path.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -34,10 +35,11 @@ def check_file(path: Path):
                         "price": row.get("price"),
                     })
 
+            quote_count += 1
             previous_timestamp = timestamp
             previous_row = row
 
-    return gaps
+    return gaps, quote_count
 
 
 def main():
@@ -53,12 +55,16 @@ def main():
     print("=" * 80)
 
     total_gaps = 0
+    total_quotes = 0
 
     for path in files:
-        gaps = check_file(path)
+        gaps, quote_count = check_file(path)
+        total_quotes += quote_count
+
+        print(f"\nFILE: {path.name}")
+        print(f"QUOTES: {quote_count}")
 
         if gaps:
-            print(f"\nFILE: {path.name}")
             print(f"GAPS FOUND: {len(gaps)}")
 
             for gap in gaps:
@@ -70,11 +76,11 @@ def main():
 
             total_gaps += len(gaps)
         else:
-            print(f"\nFILE: {path.name}")
             print("  OK - no gaps greater than 2 seconds")
 
     print("\n" + "=" * 80)
     print(f"TOTAL FILES: {len(files)}")
+    print(f"TOTAL QUOTES: {total_quotes}")
     print(f"TOTAL GAPS > {GAP_THRESHOLD}s: {total_gaps}")
     print("=" * 80)
 
